@@ -1,0 +1,80 @@
+/* Ascendant — the Luminous Void, as a page. Tokens from App/Design/Palette.swift. */
+:root {
+  --void: #05070C; --ink: #0C1019; --ink2: #0F1420;
+  --signal: #54E6CF; --text: #EEF3F9; --dim: #86B0C4; --muted: #9AA7BB; --faint: #6E7A8E;
+  --line: rgba(150, 178, 214, 0.13); --line-faint: rgba(150, 178, 214, 0.07);
+  --ember: #E8896B;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', sans-serif;
+  background: var(--void); color: var(--text);
+  background-image:
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(84, 230, 207, 0.07), transparent 70%),
+    linear-gradient(var(--line-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-faint) 1px, transparent 1px);
+  background-size: auto, 56px 56px, 56px 56px;
+  line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased;
+}
+h1, h2, .brand { font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-weight: 500; }
+.console, .label, .links a, footer {
+  font-family: 'Space Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+.nav {
+  max-width: 700px; margin: 0 auto; padding: 18px 20px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-size: 21px; letter-spacing: 1px; }
+.brand a { color: var(--text); text-decoration: none; }
+.links a {
+  margin-left: 18px; font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+}
+.links a:first-child { margin-left: 0; }
+.links a:hover { color: var(--signal); }
+.page { max-width: 700px; margin: 0 auto; padding: 56px 20px 88px; }
+.label {
+  font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--faint);
+}
+.label::before { content: "◇ "; color: var(--signal); }
+h1 { font-size: 40px; line-height: 1.15; margin: 10px 0 16px; letter-spacing: 0.5px; }
+h2 { font-size: 22px; line-height: 1.3; margin: 44px 0 10px; letter-spacing: 0.5px; }
+p { margin: 0 0 16px; }
+ul { padding-left: 22px; } li { margin-bottom: 8px; }
+a { color: var(--signal); text-underline-offset: 3px; }
+strong { color: var(--text); font-weight: 600; }
+code { font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 14px; }
+hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+.muted { color: var(--muted); }
+.updated { color: var(--faint); font-size: 14px; margin-bottom: 30px; }
+.console { color: var(--dim); font-size: 16px; line-height: 1.9; letter-spacing: 0.3px; }
+.transmission {
+  border-left: 2px solid var(--signal); padding: 4px 0 4px 18px; margin: 30px 0;
+  white-space: pre-line;
+}
+.card {
+  background: var(--ink); border: 1px solid var(--line); border-radius: 14px;
+  padding: 18px 20px; margin: 22px 0;
+}
+.card p:last-child { margin-bottom: 0; }
+.warm { border-color: rgba(232, 137, 107, 0.35); }
+.button {
+  display: inline-block; margin-top: 6px; padding: 12px 22px; border-radius: 12px;
+  border: 1px solid rgba(84, 230, 207, 0.45); background: rgba(84, 230, 207, 0.08);
+  color: var(--text); text-decoration: none;
+  font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 14px; letter-spacing: 2px;
+}
+.button:hover { background: rgba(84, 230, 207, 0.14); }
+@media (max-width: 560px) {
+  h1 { font-size: 31px; }
+  .console { font-size: 13.5px; letter-spacing: 0; }
+  .links a { margin-left: 12px; letter-spacing: 1px; }
+}
+footer {
+  max-width: 700px; margin: 0 auto; padding: 26px 20px 48px; border-top: 1px solid var(--line);
+  color: var(--faint); font-size: 12px; text-align: center; letter-spacing: 0.5px;
+}
+footer a { color: var(--faint); margin: 0 6px; }
