@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>One full day — Ascendant</title>
+<meta name="description" content="A screen recording of Ascendant's first day and the day after, for App Review.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#05070C">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+<style>
+  .film { display: block; width: 100%; max-width: 380px; aspect-ratio: 1080 / 2348; margin: 28px auto 10px;
+    border: 1px solid var(--line); border-radius: 22px; background: var(--ink); }
+  .film-note { text-align: center; color: var(--faint); font-size: 14px; margin-bottom: 36px; }
+  .chapters { list-style: none; padding: 0; }
+  .chapters li { display: flex; gap: 16px; margin-bottom: 10px; }
+  .chapters .at { flex: 0 0 64px; font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 14px;
+    padding-top: 2px; }
+  .chapters .at a { text-decoration: none; }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <span class="brand"><a href="index.html">Ascendant</a></span>
+  <span class="links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></span>
+</nav>
+<main class="page">
+<div class="label">For App Review</div>
+<h1>One full day</h1>
+<p>Ascendant's first directive comes at the next dawn, so on day one the app ends on "Your first day begins at dawn." So you needn't wait, this is that first day and the next, from a fresh install: 12 minutes.</p>
+
+<video class="film" controls playsinline preload="metadata" poster="media/ascendant-one-day-poster.jpg">
+  <source src="media/ascendant-one-day-1.0.0-9.mp4" type="video/mp4">
+  <a href="media/ascendant-one-day-1.0.0-9.mp4">Download the recording</a> (MP4, 25 MB).
+</video>
+<p class="film-note">No sound. <a href="media/ascendant-one-day-1.0.0-9.mp4" download>Download the MP4</a> (25 MB)</p>
+
+<h2>What it shows</h2>
+<ul class="chapters">
+  <li><span class="at"><a href="#t=17" data-t="17">0:17</a></span><span><strong>Day one, 19:45.</strong> Onboarding: the Vow, what pulls at you, a name, how much you can give, the first directive, and the call. It ends on "Your first day begins at dawn."</span></li>
+  <li><span class="at"><a href="#t=277" data-t="277">4:37</a></span><span><strong>The next morning, 07:30.</strong> Dawn Sync gives the day. The Channel's two windows. The morning Climb, ended with "It's done".</span></li>
+  <li><span class="at"><a href="#t=374" data-t="374">6:14</a></span><span><strong>The same day, 18:30.</strong> The evening Climb, then the Reckoning at dusk, answered. "Until dawn."</span></li>
+  <li><span class="at"><a href="#t=481" data-t="481">8:01</a></span><span><strong>The rest of the app.</strong> Self, Self → Your terms (the call, its hour, sound, name and erase), the Codex and Path.</span></li>
+  <li><span class="at"><a href="#t=662" data-t="662">11:02</a></span><span><strong>"I'm not okay".</strong> The day stops and real people to reach are shown; "I'm ready to begin again" ends it.</span></li>
+</ul>
+
+<h2>How it was made</h2>
+<p>On the iOS Simulator (iPhone 18 Pro, iOS 27.0), from a debug build of the code in version 1.0.0 (9). Every tap is made in the app as it ships, from a fresh install; nothing is seeded.</p>
+<ul>
+  <li>The app's clock is moved forward between scenes, with a launch setting that only debug builds have; the build under review has no such setting.</li>
+  <li>The status bar is set to show the app's time.</li>
+  <li>The cuts are only between scenes, and each scene starts once the app has opened. Nothing within a scene is cut or sped up.</li>
+  <li>The help lines shown are for the simulator's region, India. A phone in the United States shows the 988 Lifeline and 911.</li>
+</ul>
+<p class="muted">No sign-in and no network: everything stays on the device. Questions: <a href="mailto:dmaulikr@gmail.com">dmaulikr@gmail.com</a>.</p>
+</main>
+<footer>
+  © 2026 Ascendant · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a> · <a href="mailto:dmaulikr@gmail.com">dmaulikr@gmail.com</a>
+</footer>
+<script>
+  // A chapter's time moves the film there, and plays it.
+  document.querySelectorAll('.chapters [data-t]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var film = document.querySelector('.film');
+      film.currentTime = Number(link.dataset.t);
+      film.play();
+      film.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+</script>
+</body>
+</html>
