@@ -1,4 +1,7 @@
 /* Ascendant — the Luminous Void, as a page. Tokens from App/Design/Palette.swift. */
+/* The fonts are the app's own (SIL OFL, fonts/OFL.txt), served from here: the pages ask no other server for anything. */
+@font-face { font-family: 'Cinzel'; font-weight: 500; font-display: swap; src: url('fonts/Cinzel-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Space Mono'; font-weight: 400; font-display: swap; src: url('fonts/SpaceMono-Regular.ttf') format('truetype'); }
 :root {
   --void: #05070C; --ink: #0C1019; --ink2: #0F1420;
   --signal: #54E6CF; --text: #EEF3F9; --dim: #86B0C4; --muted: #9AA7BB; --faint: #6E7A8E;
